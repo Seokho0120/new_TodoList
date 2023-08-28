@@ -3,7 +3,9 @@ import { v4 } from 'uuid';
 
 export default function AddTodo({ onAdd }) {
   const [text, setText] = useState('');
+
   const handleChange = (e) => setText(e.target.value);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 

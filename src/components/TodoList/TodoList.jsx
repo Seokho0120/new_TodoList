@@ -10,14 +10,21 @@ function TodoList({ filter }) {
 
   const handleAdd = (todo) => setTodos([...todos, todo]);
 
-  const handleUpdate = (updated) => {
-    setTodos(todos.map((t) => (t.id === updated.id ? updated : t)));
+  const handleUpdate = (updatedTodo) => {
+    setTodos(todos.map((t) => (t.id === updatedTodo.id ? updatedTodo : t)));
   };
 
-  const handleDelete = (deleted) =>
-    setTodos(todos.filter((t) => t.id !== deleted.id));
+  const handleDelete = (deletedTodo) =>
+    setTodos(todos.filter((t) => t.id !== deletedTodo.id));
 
   const filtered = getFilteredItems(todos, filter);
+
+  function getFilteredItems(todos, filter) {
+    if (filter === 'all') {
+      return todos;
+    }
+    return todos.filter((todo) => todo.status === filter);
+  }
 
   return (
     <section>
@@ -35,13 +42,6 @@ function TodoList({ filter }) {
       <AddTodo onAdd={handleAdd} />
     </section>
   );
-}
-
-function getFilteredItems(todos, filter) {
-  if (filter === 'all') {
-    return todos;
-  }
-  return todos.filter((todo) => todo.status === filter);
 }
 
 export default TodoList;

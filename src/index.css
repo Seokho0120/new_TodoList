@@ -13,6 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -31,12 +32,13 @@ body {
   height: 60%;
   max-width: 500px;
   background-color: var(--color-bg-dark);
+  overflow: hidden;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   box-shadow: 10px 8px 16px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 8px 16px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 8px 16px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 8px 16px 0px rgba(0, 0, 0, 0.75);
 }
 
 code {
@@ -47,4 +49,9 @@ code {
 ul {
   list-style: none;
   padding-left: 0;
+}
+
+button {
+  outline: none;
+  border: none;
 }
